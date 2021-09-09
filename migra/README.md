@@ -46,5 +46,5 @@ _CLEAN UP_ `migra/migration.py` as necessary
 #### Clean up docker containers
 
 ```bash
-> docker compose down
+> docker compose down -v
 ```

@@ -64,5 +64,11 @@ To reset the database back to the beginning state:
 > alembic downgrade base
 ```
 
+#### Clean up docker containers
+
+```bash
+> docker compose down -v
+```
+
 
 

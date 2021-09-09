@@ -7,7 +7,9 @@ services:
     image: postgres
     container_name: prod-db
     ports:
-      - "5432:5432"
+      - 5432:5432
+    volumes:
+      - prod-db:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=prod
       - POSTGRES_USER=prod
@@ -18,9 +20,15 @@ services:
     image: postgres
     container_name: dev-db
     ports:
-      - "5400:5432"
+      - 5400:5432
+    volumes:
+      - dev-db:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=dev
       - POSTGRES_USER=dev
       - POSTGRES_PASSWORD=dev
     restart: always
+
+volumes:
+  prod-db:
+  dev-db:
