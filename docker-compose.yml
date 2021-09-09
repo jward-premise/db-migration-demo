@@ -1,0 +1,26 @@
+# source: https://medium.com/@TimvanBaarsen/how-to-run-an-elasticsearch-7-x-single-node-cluster-for-local-development-using-docker-compose-2b7ab73d8b82
+version: '3.7'
+
+services:
+
+  production:
+    image: postgres
+    container_name: prod-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=prod
+      - POSTGRES_USER=prod
+      - POSTGRES_PASSWORD=prod
+    restart: always
+
+  development:
+    image: postgres
+    container_name: dev-db
+    ports:
+      - "5400:5432"
+    environment:
+      - POSTGRES_DB=dev
+      - POSTGRES_USER=dev
+      - POSTGRES_PASSWORD=dev
+    restart: always
