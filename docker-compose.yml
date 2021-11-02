@@ -7,7 +7,7 @@ services:
     image: postgres
     container_name: prod-db
     ports:
-      - 5432:5432
+      - "5432:5432"
     volumes:
       - prod-db:/var/lib/postgresql/data
     environment:
@@ -20,7 +20,7 @@ services:
     image: postgres
     container_name: dev-db
     ports:
-      - 5400:5432
+      - "5400:5432"
     volumes:
       - dev-db:/var/lib/postgresql/data
     environment:
